@@ -1,2 +1,601 @@
-//Put The Story Code here...
-//All 600 Lines of its Glory
+#include <chplot.h> //Ignore this, these just make the graphs easier to program for me!
+
+/*Declaration of the variables
+ *But this is mostly the variables of names, except for the ones that will be required for maths
+ *that will be given by the player and maths
+ *and will serve as the names of our
+ *main charecters and the task known as math*/
+string_t name;
+string_t island;
+string_t namesun;
+string_t village;
+
+string_t introAnswer;
+string_t firstAction;
+
+//ForTheMath!
+int a, b, c, d;
+
+int x = 0; //This one checks for a accurete reasponse in the main code that it located at the bottom of the code
+int y = 0;
+
+/*Below this line is all of the data and code that is resposible for the construction of graphs
+ *That will have a small face and text telling what type of ending you have fallen into
+ *So if any ajustments to end faces need to be made, then all of that data will be found right here */
+ 
+//GOOD END
+void goodend(){
+     CPlot plot;
+     
+     plot.backgroundColor("black");
+     plot.strokeColor("green");
+     plot.circle(5,5,1);
+     plot.point(4.5,5.5);
+     plot.point(5.5,5.5);
+     plot.point(5,4);
+     plot.point(4.5,4.5);
+     plot.point(5.5,4.5);
+     
+     plot.line(4.5,4.5,5,4);
+     plot.line(5,4,5.5,4.5);
+     
+     plot.grid("true");
+     
+     plot.plotting();
+}
+ 
+//BAD END
+void badend(){
+    CPlot plott;
+ 
+    plott.backgroundColor("black");
+    plott.strokeColor("red");
+    plott.circle(5,5,1);
+    plott.point(4.5,5.5);
+    plott.point(5.5,5.5);
+    plott.point(5,4.5);
+    plott.point(4.5,4);
+    plott.point(5.5,4);
+
+    plott.line(4.5,4,5,4.5);
+    plott.line(5,4.5,5.5,4);
+     
+    plott.grid("true");
+
+    plott.plotting();
+}
+
+//Functions for the story
+/*Here is where all of the very lengthy code goes that contains all of the text,
+ *If any changes need to be made in the text, look no further as it will all go here */
+void intro() {  //Introdution (part 1)~~~~~ The Longest part of this whole thing :l
+    printf("Hello! Before we get started, please give us the name of your charecter and some basic info.\n");
+    scanf("%s", &name);
+    printf("Now what is the name of the island we are on?\n");
+    scanf("%s", &island);
+    printf("Thank you for this information.\nEnjoy the game!\n");
+    printf("\nNOTE: For making a choice, just put the UPPER CASE WORD of the action to avoid any issues with comfirming actions.\n");
+    printf("Close the end face at the end for somemore content, if you want.\n");
+    printf("Also some actions will have more than once Upper case word, for these you can pick either one.\n\n");
+        sleep(3);
+            printf("%s seems to be stranded on a %s in the middle of the ocean. How exciting!\n", name, island);
+            printf("%s is on the edge of %s as they are on its warm sandy beaches.\n", name, island);
+            printf("Behind %s is a forest of short trees that don't seem to go over 15 feet in height\n", name);
+            printf("When %s looks to thier right there is nothing but more of the beach, but to %s's left are some washed up crates\n", name, name);
+            printf("On %s currently, has some basic clothes, a simple hoody, and a phone(Which won't do much good out here).\n", name);
+            printf("As %s gathered this information, a small sun-bear comes out of the bushes!\n");
+            printf("It seems to be curious about you, and so it just comes up to you, and when you try and walk away, it follows.\n");
+            printf("Since you are stuck with him, you might as well give him some sort of name, what will be?\n");
+                scanf("%s", &namesun); //NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNAAAAAAAAAAAAAAAAAAAAAAMMMMMMMMMMMMMMMMMMMMMMMMEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            printf("I think I will name you %s, %s said to him, he just smiled.\n", namesun, name);
+            printf("%s and %s have a but a few options presented to them, which one will the choose?\n", name, namesun);
+            printf("They could either, Explore the island, Gather supplies, or Procrastinate.\n");
+                        printf("What will they do?\n");
+}
+
+//ALL OF THE FIRST ACTIONS THAT STEM FROM THE INTRO ARE BELOW THIS LINE~~~~~~
+/*All of the code here is not neccesarly code, but rather it is the story
+ *so there is not too much here that is involved with the code
+ *except for the small parts that goes to the main function such as void__(); */
+//The First set of actions that our hero will make, Exploration
+void part1E() {
+    sleep(1);
+    printf("    %s Set out with %s in tow, into the forest of trees, wondering what they will find out in the forest.\n", name, namesun);
+    printf("Maybe they could find someone out here that could help them out and be friends\n");
+    printf("Maybe they could discover something new out there deep in the forest of %s.\n", island);
+    printf("They Walked in the forest for what felt like many hours, and they had no clue of where they were anymore.\n");
+    printf("At this point something had come into %s's sight, above the trees was a tall pillar of smoke, overlooking the trees.\n");
+    printf("The pillar of smoke could be a sign of one of two things, people or fire, so %s and %s head twords it to get a better look.\n", name, namesun);
+    printf("Apon getting a closer look, the fire was caused by the ladder of the two things, there is a small village just a short distance away.\n");
+    printf("As %s over looks the village in the distance, there is a cave that is not too far off.\n", name);
+    printf("%s could either: Go the Village, keep Exploring the Forest, or enter the Cave.\n", name);
+    printf("What will it be?\n");
+}
+
+//The First set of actions that our hero will make, Gathering
+void part1G() {
+    sleep(1);
+    printf("    %s and %s Went out to slavage supplies from the crates that were laying in the sand.\n", name, namesun);
+    printf("Although there was not all to much that was useful in the crates, there were still a few items that seemed worth taking.\n");
+    printf("%s was able to salvage some rope and a few tools, and a couple of useless electronics, %s only salvaged some food...\n", name, namesun);
+    printf("But probably the most importiant find was some a box that was full of flares that could prove to be useful later...\n");
+    printf("After gathering as much as they could, %s knew that that with the tools they had quite a few options available.\n");
+    printf("%s could either: build a Home, build a Boat, or Venture the Coast\n", name);
+    printf("What will the choice be?\n");
+}
+
+void part1P() {
+    sleep(1);
+    printf("    %s sat on the warm sand, looking out to the bright blue sky.\n");
+    printf("Although there was not too much out here to see, just siting near the waves  with %s was a relaxing expirence.\n", namesun);
+    printf("After only about of an hour of sitting on the nice warm sand, listing to the waves, something caught the eye of %s.\n", name);
+    printf("It was a small white boat that was seemed to be cruising around %s.\n", island);
+    printf("%s knew immediately that this was an oppertunity to get off of %s and back to civilisation.\n", name, island);
+    printf("But %s needed to act fast as it would appear that the boat was slowly gaining momentum away from %s.\n", name, island);
+    printf("%s could either: Yell, Shout and Wave like crazy, Through something at the boat, or Run to the boat.\n", name);
+    printf("What will it be?\n");
+}
+//ALL OF THE POSSIBLE ENDINGS ARE LISTED BELOW THIS LINE~~~~~~~~~~~~~~~~~~~~~~
+/*Agian, same story that was mentioned on the first actions
+ *that were made from the intro, these actions are the endings */
+//The Second set of endings that will stem from Exploration!
+//Village
+void end1(){
+    sleep(1);
+    printf("    Apon entering into the forest with %s, %s quickly noticed a couple of importiant things.\n", namesun, name);
+    printf("First off, these people look like they have never seen anyone from the modern era, just by the way they look at him.\n");
+    printf("And well, they don't have all to much in terms of valuables, hopefully they are peaceful, %s thought.\n");
+    printf("Then, who seemed like the chief approched %s and %s, he seemed curious and stern.\n");
+    printf("'Who are you' he asked, this suprised our hero as they had no idea he could speak english.\n.");
+    printf("Before %s could say anything he asked %s where they had come from and explain %s.\n", name, name, namesun);
+    printf("The chief told them that they are not welcome to the village of %s if they could not answer the imposible question.\n", island);
+    printf("'Answer the question correctly, and you will be permited to stay, answer inacorrectly and you shall Perish!'\n");
+    printf("Before %s could get thier thoughts together, the question was asked.\n\n", name);
+    sleep(1);
+        /*QUICK MATH
+         *All this is doing is creating a two random varibales that we will be soon using in the code that is just below
+         *Additionaly, right here is the code that tells the computer what our two variables will be equal to
+         *So that it knows if to give the good or bad ending if our player gives the right answer to the question asked */
+        a = randint(1,99);
+        b = randint(1,99); 
+    
+            c = a * b;
+        //Start up the story agian...
+        printf("What is %d * %d?\n", a, b);
+            scanf("%d", &d);
+            if(d == c){
+                printf("%s called %d nerviously.\n", name, c);
+                sleep(1.5);
+                printf("Correct!, you and your beast shall take my place as chief as you have proven your self to be worthy.");
+                sleep(3);
+                printf("And so the %s would forever change the village of %s forever, first he had renamed the village to something better.\n", name, island);
+                printf("It would be known as...\n");
+                    scanf("%s", &village);
+                printf("%s", village);
+                printf("%s would thrive and florish under the rule of %s, %s would never be seen by the world for many decades after %s passed on.\n", village, name, village);
+                printf("Many advancements would come from %s that would make the villagers lives easier, and when found was seen as the most advanced civilisation found.\n", name);
+                printf("And %s was seen as the proud ruler, and seen as a historical hero, who raised a great civilisation.\n", name);
+                printf("And that is how the story of %s ends, although never seen agian, he made a perment mark on history...\n", name);
+                printf("The End\n\n");
+                    goodend();
+                        sleep(1);
+                            printf("Then %s had woken up from the nap that they had taken while on the plane.\n");
+                            printf("The intercom had come alive to tell everyone that they must put their seatbelts as they would soon be landing on %s.\n", island);
+                            printf("What a strange dream that was %s had thought to themselves, but it had put an idea into their head.");
+                            printf("What if I wrote a choose your own adventure novel, %s thought, as they had all of the ideas now.\n", name);
+                            printf("When %s landed on %s for his vaction, %s spent a lot of time joting down all of the ideas that they had in their head.\n", name, island);
+                            printf("But %s would enjoy this time that they had, as at least %s was not was not having to do something in order to survive.\n", name, name);
+                        sleep(4);
+                        printf("The End!\n\n");
+                        exit(3);
+                
+            }
+            //Just an easter egg =^-^=
+        if(c == 42){
+                        printf("So you know the meaning of it all, dont you?\n");
+            sleep(.5);
+                        printf("So you know the meaning of it all, dont you?\n");
+            sleep(.5);
+                        printf("So you know the meaning of it all, dont you?\n");
+            sleep(.5);
+                        printf("So you know the meaning of it all, dont you?\n");
+            sleep(.5);
+                        printf("So you know the meaning of it all, dont you?\n");
+            sleep(.5);
+                        printf("So you know the meaning of it all, dont you?\n");
+            sleep(.5);
+                        printf("So you know the meaning of it all, dont you?\n");
+            sleep(.5);
+                        printf("So you know the meaning of it all, dont you?\n");
+            sleep(.5);
+                        printf("So you know the meaning of it all, dont you?\n");
+            sleep(.5);
+                        printf("So you know the meaning of it all, dont you?\n");
+            sleep(.5);
+                        printf("So you know the meaning of it all, dont you?\n");
+            sleep(.5);
+                        printf("So you know the meaning of it all, dont you?\n");
+            sleep(.5);
+                        printf("So you know the meaning of it all, dont you?\n");
+            sleep(.5);
+                        printf("So you know the meaning of it all, dont you?\n");
+            sleep(.5);
+                        printf("So you know the meaning of it all, dont you?\n");
+            sleep(.5);
+                        printf("So you know the meaning of it all, dont you?\n");
+            sleep(5);
+                printf("The end?\n\n");
+                exit(5);
+        }
+        else{
+            printf("You have failed this task, you must now Suffer! the chief shouted.\n");
+            printf("Quickly %s and %s fled the village as the people shouted at them in rage, unable to complete a simple task.\n", name, namesun);
+            printf("They ran, and ran until they seen a clearing in the distance, %s stopped, but %s kept in running.\n", namesun, name);
+            printf("%s could not find out why, before it was too late, and he had fallen off a cliff...\n", name);
+            printf("%s's journey had come to end, although he was never found for many years later, they had mistaken %s for a explorer.\n", name, name);
+            printf("They had brodacasted him all over the news and how %s died after discovering a village.", name);
+            printf("So in a sense %s was remebered as a explorer incident gone wrong, so its a bad, but kinda good end...\n", name);
+            printf("The End\n");
+            badend();
+                sleep(1);
+                    //Plot twist!
+                    printf("Then a there was a loud bell and %s woke, he was on a plane.\n", name);
+                    printf("It was only a dream, and %s remebered that they were on route to a nice vacation to the beach.\n");
+                    printf("A strange dream %s thought, and how ironic, this is a story that %s would definetly share with his friends.\n", name, name);
+                    printf("Maybe it could be a short pick your own adventure kinda book, %s thought to themselves, what a nice story indeed...\n", name);
+                    printf("%s would go and enjoy this vaction a lot, as now they did not have to look or do something in order to survive.\n", name);
+                    printf("The End!\n\n");
+                exit(3);
+            }
+        }
+
+//Forest
+void end2(){
+    printf("%s and %s continued exporing the forest together, and as lost as they were, %s started to panic a bit.\n", name, namesun, name);
+    printf("It was starting to get dark and %s still had no sense of direction, until %s noticed a clearing in the distance.\n", name, name);
+    printf("Could this be the way back to the beach, or another unknown place, %s could not be sure until they went there.\n", name);
+    printf("So they did, and when they entered the clearing, and there was nothing. But then %s heard a pling on him.\n", name);
+    printf("%s seen that he had a very weak signal connection on the phone, and quickly called a friend.\n", name);
+    printf("They answered, and asked %s how they were doing, and %s frantacly called how they were stuck on %s.\n\n", name, name, island);
+        sleep(3);
+        printf("Threes day later a small group of individuals came and found %s in the clearing of the forest with %s.\n", name, namesun);
+        printf("At first they were afraid of %s, but %s told them that it was alright.\n", namesun, name);
+        printf("%s was sad that they had to leave %s, even if they were together for only a short while, it felt like a long time.\n\n", name, namesun);
+            sleep(3);
+                printf("They all climbed intro the helicopter that they had used, and started to head back home.\n");
+                printf("%s watched as %s became nothing more than a small dot in the middle of the ocean, and began to felt tired as well.\n");
+                printf("It did not matter much anymore as at least %s was headed home finaly.\n", name);
+                printf("During this time %s had fallen asleep in the back of the chopter.\n\n", name);
+                    goodend();
+                    sleep(1);
+                            printf("Then the intercom came alive to tell passangers that they must put on their seatbelts as they would soon be landing on %s.\n", island);
+                                printf("Just like that %s's dream was interupted.\n", name);
+                                printf("Strange %s thought to themself, what a very strange but somewhat plesent dream.\n", name);
+                                printf("Maybe I should write a childrens book about %s, as it seems like a great idea...\n", namesun);
+                                printf("And just like that %s was on his way with his life, enjoying his vacation on the island of %s.\n", name, island);
+                                    sleep(3);
+                                        printf("The End\n\n");
+                                        exit(3);
+}
+
+//Cave
+void end3(){
+    printf("    %s thought that the cave would provide as a temporary shelter, and so they made their way to it.\n", name);
+    printf("As %s and %s entered into the cave they could not see anything that well, because it was very dark inside.\n", name, namesun);
+    printf("So %s used the flashlight option oh their phone so that they could see the inside of the cave better.\n");
+    printf("And to %s suprise, they were not alone inside of the cave, as there was another bear inside of the cave.", name);
+    printf("%s just froze, but soon realised that it was just another sun bear, so it was not all the bag, but was still nervious.\n", name);
+    printf("%s was able to connect the dots and realised that it was most likely %s's mother or something.\n", name, namesun);
+    printf("So %s tried their best to convince the bear that they were just giving its baby back, and that you did noting wrong and will be on your way.\n", name);
+    printf("But instead of just letting %s go, they had just snuggled up to %s, and would not let %s leave and be on their way.\n", name, name);
+    printf("At this moment %s felt at peace and did not care all that much about the need to survive, and he fell asleep.\n\n", name);
+        goodend();
+        sleep(1);
+                printf("    Then %s woke up and he was awake, on a plane.\n", name);
+                printf("The intercom came alive to tell passangers that they must put on their seatbelts as they would soon be landing on %s.\n", island);
+                printf("Strange %s thought to themself, what a very strange but somewhat plesent dream.\n", name);
+                printf("Maybe I could write a choose your own adveture book about %s, as it seems like a great idea...\n", namesun);
+                printf("And just like that %s was on his way with his life, enjoying his vacation on the island of %s.\n", name, island);
+                sleep(3);
+                    printf("The End\n\n");
+                    exit(3);
+}
+
+//The Second set of endings that will stem from Gathering resources!
+//Building your home!
+void end4(){
+    printf("    With your new found tools that you got from the washed up crates, %s is confident in this.\n", name);
+    printf("%s first needs to get wood to build his home with, so he gets to work on chopping down a few trees.\n", name);
+    printf("To clear up a small patch of land and well, to build the house its self.");
+    printf("As the sky began to grow dark with the night save for the bright full moon and the distant stars.\n");
+    printf("%s just had enough wood for a small house, and got to work, using one of the flares as a work light");
+    printf("After many hours, the house was complete, and %s quickly went inside to get some sleep.\n");
+    printf("%s knew that it would be diffecult, but after sometime, it would become easy.\n", name);
+        sleep(5);
+            printf("    %s lived off of %s for many years, he learned how to surive and get all of the resources that he needed.\n", name, island);
+            printf("It was not until 3 years later that %s was discovered on the island, and was rescued by a small crew on a boat.\n", name);
+            printf("When %s came home, everyone that he knew thought he was missing, and was most likely dead.\n", name);
+            printf("It was diffecult for %s to adjust back to his original life style, but like %s had said to themself years ago.\n", name, name);
+            printf("That it would be diffecult, but after sometime, it would become easy agian.\n");
+                goodend();
+                    sleep(1);
+                        printf("    Then the intercom came on, giving %s a small spook,'please fasten your seatbelts as we will soon be landing on %s.'\n", name, island);
+                        printf("%s was on a airplane. Then %s remebered that they were going on a week long vaction on the island of %s.\n", name, name, island);
+                        printf("Strange %s thought to themself, what a very strange dream that was.\n", name);
+                        printf("Maybe I could write a choose your own adventure book about %s, and %s, as it seems like a great idea...\n", namesun, island);
+                        printf("And just like that %s was on his way with his life, enjoying his vacation on the island of %s.\n", name, island);
+                        sleep(3);
+                            printf("The End\n\n");
+                            exit(3);
+}
+
+//Building a boat!
+void end5(){
+    printf("    %s went out into the forest and cut down a few of the short trees so that he could build a boat and get off the island.\n", name);
+    printf("After many hours of gathering the wood neccesary, %s felt like that they had enough wood for the boat project.\n", name);
+    printf("%s just watched curiously at %s as they had built the boat, that was more like a large flat board made of wood and rope.\n", namesun, name);
+    printf("When it was all said and done, %s pushed it out to sea, and jumped on with their few belongings and a handmade oar.\n", name);
+    printf("%s told %s to stay on %s, as of %s were to get onto the boat, it would probably sink to the bottom of the ocean", name, namesun, namesun);
+    printf("As %s started to drift out into the sea, %s began to slowly get smaller and smaller the futher %s got from it.\n", name, island, name);
+    printf("Then %s pulled out the make-shift oar and began to paddle in any direction that seemed to be good.\n\n", name);
+        sleep(5);
+            printf("    Many days had passed as %s was lost at sea, thinking of how they should have stayed on %s with %s.\n", name, island, namesun);
+            printf("At least %s was not alone and had access to resources on %s, but %s was no longer in sight, and there was nothing but ocean.\n", name, island);
+            printf("Many hours passed on, %s had no food or water, but then %s seen something not too far out in the water.\n", name, name);
+            printf("%s quickly grabed their paddle and used their last bit of strength to paddle to the object.\n", name);
+            printf("Apon arrive at the object there was nothing there. it was just a reflection of the sun on the water.\n");
+            printf("%s just looked at the big and wide ocean, as he fell off the boat, and slowly sank to the bottom, as %s had no energy left.\n\n", name, name);
+                badend();
+                sleep(1);
+                    printf("    Then, %s woke up on a plane.\n");
+                    printf("Then the intercom had come on, telling all passangers to fasten their seatbelts as they would soon be landing on %s.\n\n", island);
+                    printf("Strange %s thought to themself, what a very strange and unpleasent dream.\n", name);
+                    printf("Then %s got an idea from this dream that they had just woken from.\n", name);
+                    printf("Maybe I could write a choose your own adventure book about %s, as it seems like a great idea...\n", namesun);
+                    printf("And just like that %s was on his way with his life, enjoying his vacation on the island of %s.\n", name, island);                                sleep(3);
+                        printf("The End\n\n");
+                            exit(3);
+}
+
+//Eexploring somemore
+void end6(){
+    printf("    While exploring the coast with %s, they did not find anything that had too much interest.\n", namesun);
+    printf("It was beginning to get dark out, as the sun started to set over the big blue ocean.\n");
+    printf("But in the conner of %s's eye, there was a reflection of the sun's last bit of light.\n", name);
+    printf("To %s's suprise it was none other than a small boat that was sailing around the coast of %s.\n", name, island);
+    printf("But they are slowing heading out to the ocean!\n");
+    printf("In that moment %s remebered the box of flares that they had recovered back at the crates.\n", name);
+    printf("%s quickly lit one and bright red star was born above their head as the sun dipped below the ocean.\n", name);
+    printf("It did not take long for the crew aboard the boat to notice the flare, and quickly came to the rescue.\n");
+        sleep(3);
+            printf("    When they had docked onto the sandy shore of %s, %s got on board, but would not let %s.\n", island, name, namesun);
+            printf("They said that %s was too heavy for the boat to carry, and they did not know how he would react on the waves.\n", namesun);
+            printf("It was hard, to let him go, but it was for the best for both %s and %s.\n", name, namesun);
+            printf("As they sailed away, %s had tears in their eyes, as they watched %s dissapear into the darkness, and %s soon after.\n", name, namesun, island);
+                sleep(3);
+                    printf("    Although they had been together for a few hours, it felt like a very long time.\n");
+                    printf("%s was only gone for a short amount of time. And everyone wanted to know what had happened to them.\n", name);
+                    printf("So %s told them all about what had happened as he was gone, but %s was never sure how he ended up in %s.\n", name, name, island);
+                    printf("It did not take %s too long to readjust to life, as they told %s that they were only gone for a few weeks.\n");
+                    printf("Life for %s would go on like normal, but %s would never forget the time that they had spent on %s, especaily %s.\n", name, name, island, namesun);
+                    goodend();
+                        sleep(1);
+                            printf("    Then %s woke up in a plane, with tears streaming down their face.\n", name);
+                            printf("Even if it was just a dream, it all had felt so real and strange.\n");
+                            printf("The intercom came alive to tell passangers that they must put on their seatbelts as they would soon be landing on %s.\n", island);
+                            printf("Strange %s thought to themself, what a very strange but somewhat plesent dream.\n", name);
+                            printf("Maybe I could write a choose your own adventure book about %s, as it seems like a great idea...\n", namesun);
+                            printf("And just like that %s was on his way with his life, enjoying his vacation on the island of %s.\n", name, island);
+                                sleep(3);
+                                    printf("The End\n\n");
+                                    exit(3);
+}
+
+//The Second set of endings that will stem from Procrastinating!
+//Shouting and waving at the boat
+void end7(){
+    printf("    %s started by just waving their arms back and fourth like a crazy person.\n", name);
+    printf("But there was no change in the boats course, and it was still slowly drifting away from %s.\n", island);
+    printf("The %s started to wave their arms agian, but this time, %s paired it with loud yelling and shouting.\n", name, name);
+    printf("Then for a moment the boat started to turn back around to face %s once agian.\n", island);
+    printf("They were coming back!\n");
+    printf("Maybe %s would be taken back home and away from %s.\n", name, island);
+    printf("Once they had docked on the warm sand of %s, when they had seen %s, they were a little frightened.\n", island, namesun);
+    printf("That was until %s was able to convince the sailors that %s was completely harmless.\n", name, namesun);
+    printf("They said that they would be unable to take %s back, as he was too heavy, and it would be better if he stayed in his habitat.\n", namesun);
+        sleep(3);
+            printf("    It was hard, to let him go, but it was for the best for both %s and %s.\n", name, namesun);
+            printf("As they sailed away, %s had tears in their eyes, as they watched %s dissapear into the darkness, and %s soon after.\n", name, namesun, island);
+                sleep(3);
+                    printf("    Although they had been together for a few hours, it felt like a very long time.\n");
+                    printf("%s began to doze off into sleep as the boat continued on it path to wherever it was headed.\n", name);
+                    printf("It did not matter as at least %s was safe and finaly headed home.\n", name);
+                    goodend();
+                        sleep(1);
+                            printf("Then %s woke up in a plane, with tears streaming down their face.\n", name);
+                            printf("Even if it was just a dream, it all had felt so real and strange.\n");
+                            printf("The intercom came alive to tell passangers that they must put on their seatbelts as they would soon be landing on %s.\n", island);
+                            printf("Strange %s thought to themself, what a very strange but somewhat plesent dream.\n", name);
+                            printf("Maybe I could write a choose your own adventure book about %s, as it seems like a great idea...\n", namesun);
+                            printf("And just like that %s was on his way with his life, enjoying his vacation on the island of %s.\n", name, island);
+                                sleep(3);
+                                    printf("The End\n\n");
+                                    exit(3);
+}
+
+//Attemting to through something at the boat
+void end8(){
+    printf("    %s grabbed a small rock that was laying on the ground and let it fly across to the boat.\n", name);
+    printf("Although it did make it to the boat as it was not actualy all that far away, it hit something else.\n");
+    printf("It went throught the control window and hit the captin unconcious.\n");
+    printf("Because it was so sudden and he was holding the wheel, it cause him pull the wheel as he fell.\n");
+    printf("Then all of a sudden, %s watched the boat turn over and capsize, ruining their one chance of escape.\n", name);
+    printf("%s and %s just stood there, on the beach, in awe, at how %s just might have killed a whole crew with a rock.\n", name, namesun, name);
+    printf("It was very impressive, but also very, Very bad at the sametime.\n");
+    printf("%s quickly swam over to the boat, but everyone inside had drowned as everyone was inside when it caped.\n");
+    printf("%s salvaged as much as they could from the boat, mainly any radios that could be found and navigation tools.\n", name);
+        sleep(4);
+            printf("    %s and %s just looked at what they had, some electronics(Most likely busted), a map, and a compass.", name, namesun);
+            printf("The next day, the electronics dried out, they worked(Horribly).\n");
+            printf("%s headed back to the boat to see if there was anything left, and there was a waterproof walkie talkie,\n", name);
+            printf("there was also a small toolbox, and a manual that was in a plastic bag.\n");
+                sleep(5);
+                    printf("    %s was able to use the knowlage in the manual and the tools to but the radio back together.\n", name);
+                    printf("It was not perfect, but %s was able to get a better connection, %s watched %s talking into the radio, for many a hour.\n", name, namesun, name);
+                    sleep(4);
+                        printf("    After many hours of trying diffrent signals that were mentioned in the manual, %s finally got a reply from someone.\n", name);
+                        printf("%s then used the map to tell them %s's aproximate location, they said to wait just a few more days, they would be there soon.\n", name, name);
+                        sleep(5);
+                            printf("    The next day, late in the afternoon, %s and %s heard the distant sound of a helicopter in the distance.\n", name, namesun);
+                            printf("Although %s knew that they would have to leave behind %s, %s still felt bad about it, and did not want to leave.\n", name, namesun, name);
+                            printf("As %s got into the helicopter, they watched %s just sit and watch, as they grew more distant from each other.\n", name, namesun);
+                            printf("As they flew farther from %s, %s grew smaller and smaller in the distance, until %s could no longer see %s anymore.\n", island, namesun, name, island);
+                            printf("%s began to doze off from the exausting experience known as being stranded on a island in the middle of nowhere.\n", name);
+                            printf("For once %s no longer felt stressed, but rather felt at peace, because they knew that they were finaly headed home.\n", name);
+                            goodend();
+                                sleep(1);
+                                    printf("    Then %s woke up in the seat of a plane that was flying just above the clouds.\n", name);
+                                    printf("Even if it was just a dream, it all had felt so real and strange.\n");
+                                    printf("Then the intercom had come on to tell passangers that they are to fasten their seatbelts as they would soon be landing on %s.\n", island);
+                                    printf("Strange %s thought to themself, what a interesting dream about the island that I am headed to for vacation.\n", name);
+                                    printf("Maybe I could write a choose your own adventure book about %s and their adventures on %s, as it seems like a great idea...\n", namesun, island);
+                                    printf("And just like that %s was on his way with his life, enjoying his vacation on the island of %s and beginning to make drafts...\n", name, island);
+                                        sleep(3);
+                                            printf("The End\n\n");
+                                            exit(3);
+                                    
+}
+
+//Attemting to Run to the boat
+void end9(){
+    printf("    As %s ran out to the boat, %s just looked at em, puzzled.\n", name, namesun);
+    printf("%s hit the water, and tried their hardest, trying to get to the boat.\n", name);
+    printf("Then %s could no longer feel the ground below him, and was now swiming to the boat.\n", name);
+    printf("Nobody seemed to notice how %s was swiming not to far behind them, %s tried to yell but only got water in his mouth.\n", name, name);
+    printf("The boat was picking up in speed, and %s was now yards away from the shore of %s.\n", name, island);
+    printf("%s's muscles began to ache from the extream cold of the water of the ocean.\n");
+    printf("Then %s's muscles had cramped up, and he was unable to keep afloat and sank to the bottom the ocean.\n");
+        sleep(3);
+            printf("%s then passed out from exaustion...\n", name);
+            printf("Maybe it was for the better anyways...\n");
+            badend();
+                sleep(1);
+                    printf("    %s woke up in a cold sweat, he realized that he is not on a plane flying above the clouds.\n", name);
+                    printf("The intercom came alive to tell passangers that they must put on their seatbelts as they would soon be landing on %s.\n", island);
+                    printf("Strange %s thought to themself, what a very strange dream that was, I drowned in that dream...\n", name);
+                    printf("Maybe I should write a choose your own adventure book about %s, and the island of %s, as it seems like a great idea...\n", namesun, island);
+                    printf("And just like that %s was on his way with his life, enjoying his vacation on the island of %s.\n", name, island);
+                    sleep(3);
+                        printf("The End\n\n");
+                        exit(3);
+}
+
+//Main Function, or the heart, brain, etc. of it all
+/*This is the main code of the whole story as this is where everything happens
+ *each if represents a diffrent out come that can come out depending on the input of the player
+ *Additionaly, the first three stem from the Intro, while the following 9 are endings
+ *So if any changes need to be made in terms of order or out come, they will all go here
+ *Instead of any of the code that is above the line */
+int main(){
+        intro();
+    do{
+        scanf("%s", &introAnswer);
+        sleep(2);
+        if(introAnswer == "Explore" || introAnswer == "explore"){                     
+            part1E(); 
+            x = 1;
+        }
+        if(introAnswer == "Gather" || introAnswer == "gather"){
+            part1G();
+            x = 1;
+        }
+        if(introAnswer == "Procrastinate" || introAnswer == "procrastinate"){
+            part1P();
+            x = 1;
+        }
+        /*This if statment will only trigger if the user put a incorrect response to the code
+         *and will reset the do loop so that our user won't have to reset the program because
+         *of a simple mistake like a typo, or not putting the correct word for the next action */
+        if(x == 0){
+            printf("Sorry, but what you have input was incorrect and was not recognized, please try agian.\n");
+        }
+    }
+while(x ==0);
+    
+
+    //Main Functions for part 2!
+    //These three are the for the Exploration of the forest
+    do{
+        scanf("%s", &firstAction);
+        sleep(2);
+        if(firstAction == "go" || firstAction == "Go" || firstAction == "village" || firstAction == "Village"){
+            end1();
+            y = 1;
+        }
+        if(firstAction == "explore" || firstAction == "Explore" || firstAction == "forest" || firstAction == "Forest" || firstAction == "exploring" || firstAction == "Exploring"){
+            end2();
+            y = 1;
+        }
+        if(firstAction == "cave" || firstAction == "Cave"){
+            end3();
+            y = 1;
+        }
+        //These three are for the Gathering of the resources
+        if(firstAction == "home" || firstAction == "Home"){
+            end4();
+            y = 1;
+        }
+        if(firstAction == "boat" || firstAction == "Boat"){
+            end5();
+            y = 1;
+        }
+        if(firstAction == "Venture" || firstAction == "Venture" || firstAction == "coast" || firstAction == "Coast"){
+            end6();
+            y = 1;
+        }
+        //These three are fot the Procrastination on the beach
+        if(firstAction == "yell" || firstAction == "Yell" || firstAction == "shout" || firstAction == "Shout" || firstAction == "wave" || firstAction == "Wave"){
+            end7();
+            y = 1;
+        }
+        if(firstAction == "through" || firstAction == "Through"){
+            end8();
+            y = 1;
+        }
+        if(firstAction == "run" || firstAction == "Run"){
+            end9();
+            y = 1;
+        }
+        /*This if statment will only trigger if the user put a incorrect response to the code
+         *and will reset the do loop so that our user won't have to reset the program because
+         *of a simple mistake like a typo, or not putting the correct word for the next action */
+        if(y == 0){
+            printf("Sorry, but what you have input was incorrect and was not recognized, please try agian.\n");
+        }
+    }
+    while(y == 0);
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//600 LINES!
+//601 LINES!
