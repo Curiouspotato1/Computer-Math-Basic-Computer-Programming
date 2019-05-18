@@ -1,3 +1,11 @@
+/* Get ready for an Epic Journey Through this game that was made through hours of writting
+ *Even though the game is short and lacking in terms on content. That is ok
+ *To get started simply run the code in ChIDE(Or anything that runs ch)
+ *do not worry about any capitlization, as the code is able to recogize the word in any from
+ *Just make sure to spell it correctly, and even if you don't the code won't break
+ *It will just ask you to try again due to the fact that it does not recogize your input
+ *Other than that please do enjoy the game!! */
+
 #include <chplot.h> //Ignore this, these just make the graphs easier to program for me!
 
 /*Declaration of the variables
@@ -23,7 +31,7 @@ int y = 0;
  *That will have a small face and text telling what type of ending you have fallen into
  *So if any ajustments to end faces need to be made, then all of that data will be found right here */
  
-//GOOD END
+//GOOD END (Graph)
 void goodend(){
      CPlot plot;
      
@@ -44,7 +52,7 @@ void goodend(){
      plot.plotting();
 }
  
-//BAD END
+//BAD END (Graph)
 void badend(){
     CPlot plott;
  
@@ -65,7 +73,7 @@ void badend(){
     plott.plotting();
 }
 
-//Functions for the story
+//Functions for the story-- This can also be described as the begging of the stoty, as mentioned below, Duh ~~
 /*Here is where all of the very lengthy code goes that contains all of the text,
  *If any changes need to be made in the text, look no further as it will all go here */
 void intro() {  //Introdution (part 1)~~~~~ The Longest part of this whole thing :l
@@ -93,7 +101,7 @@ void intro() {  //Introdution (part 1)~~~~~ The Longest part of this whole thing
                         printf("What will they do?\n");
 }
 
-//ALL OF THE FIRST ACTIONS THAT STEM FROM THE INTRO ARE BELOW THIS LINE~~~~~~
+//ALL OF THE FIRST ACTIONS THAT STEM FROM THE INTRO ARE BELOW THIS LINE~~~~~~~~
 /*All of the code here is not neccesarly code, but rather it is the story
  *so there is not too much here that is involved with the code
  *except for the small parts that goes to the main function such as void__(); */
@@ -521,7 +529,6 @@ int main(){
         }
     }
 while(x ==0);
-    
 
     //Main Functions for part 2!
     //These three are the for the Exploration of the forest
@@ -590,12 +597,4 @@ while(x ==0);
 
 
 
-
-
-
-
-
-
-
-//600 LINES!
-//601 LINES!
+//600!
