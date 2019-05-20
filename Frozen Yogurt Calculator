@@ -1,0 +1,28 @@
+//Declare the Variables that will be used to calculate your cost, including taxes and discounts
+double salesprice, discount, salestax, ounces, total, Discountedtotal, Taxtotal, nettotal, finaltotal;
+//Discount of 15%
+discount = .15;
+//Sales tax of 8.25%
+salestax = .0825;
+//Cost per ounce
+salesprice = 0.39;
+
+/*Computer asks you(the user) how much frozen yogurt you would like (In Ounces)
+ *Also how much it costs for each ounce (salesprice)*/
+printf("Hello! Would you like to purchase some Frozen Yogurt?\n");
+printf("It costs $%.2lf per ounce, with a 8.25%% sales tax.\n", salesprice);
+printf("It would seem like you have a 15%% discount... How much can I get you?\n\n");
+
+//You, the user will input the number of ounces that you would like
+scanf("%lf", &ounces);
+
+//computer does the math to find out much it will cost for the number of ounces that you would like
+total = ounces * salesprice;
+Taxtotal = total * salestax;
+nettotal = Taxtotal + total;
+Discountedtotal = nettotal * discount;
+finaltotal = nettotal - Discountedtotal;
+
+/*Final statment(Your cost)
+ *With taxes included! */
+printf("\nIt costs $%.2lf for %.2lf ounces of Frozen Yogurt after a 8.25%% sales tax and your 15%% discount.\n\n",finaltotal, ounces);
