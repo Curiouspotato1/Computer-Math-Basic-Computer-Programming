@@ -1,0 +1,71 @@
+//Challange 1
+/*Here is some good information to know on the objective
+ *The bot will be starting at point A or at point 0,0
+ *Rock W (The target) will be at 53,30
+ *Other possible targets, which are U (at 38,22)
+ *And V, which is at 48,16
+ *And that is what we know for mission 1 */
+ 
+#include<linkbot.h>
+ 
+//All variables-
+CLinkbotI challanger; //Declare Linkbot
+string_t sample;
+/*Declares variables that will remove the need of typing the radius and widths of wheels 
+ *In each function that requires them, such as driveDistance */
+double radius = 1.75;
+double trackwidth = 3.69; 
+ 
+//Start of program
+void intro (){
+    //Asks user where the sample is located
+    printf("What sample do we need to recover?\n");
+    printf("We can go after sample W, U, or V.\n");
+    //Asks for user input
+    scanf("%s", &sample);
+}
+ 
+/*The 
+ *It is in this step that the program will find out where the bot must go to reach the hacky sack
+ *For example:
+ *If you put that the hacky sack is located at one, the bot will travel to the point one.
+ *There is one input for each of the three locations that the samples are located
+ *challanger.turnRight(Left) is used to have the bot turn, Right or left
+ *The code challanger.driveDistance(x, y) is used to tell the bot what angle to move at(x) and for how long(y) */
+
+void sampler (){
+    if(sample == "w" || sample == "W"){
+        challanger.driveDistance(-35.5, radius);
+        challanger.turnLeft(90, radius, trackwidth);
+        challanger.driveDistance(-28, radius);
+        challanger.turnRight(90, radius, trackwidth);
+        challanger.driveDistance(-22.5, radius);
+        challanger.driveDistance(2, radius);
+    }
+    if(sample == "u" || sample == "U"){
+        challanger.driveDistance(-33.5, radius);
+        challanger.turnLeft(90, radius, trackwidth);
+        challanger.driveDistance(-18.75, radius);
+        challanger.turnRight(90, radius, trackwidth);
+        challanger.driveDistance(-25, radius);
+        challanger.driveDistance(2, radius);
+    }
+    if(sample == "v" || sample =="V"){
+        challanger.driveDistance(-35.5, radius);
+        challanger.turnLeft(90, radius, trackwidth);
+        challanger.driveDistance(-14, radius);
+        challanger.turnRight(90, radius, trackwidth);
+        challanger.driveDistance(-22, radius);
+        challanger.driveDistance(2, radius);
+    }
+}
+ 
+/*Main Function
+ *It is used to delcare in which each funtion will occur in
+ *As can be seen, intro will go first(Where varibales are declared)
+ *Followd by sampler, which tells the bot where to go */
+int main(){
+    intro();
+    sampler();
+}
+ 
