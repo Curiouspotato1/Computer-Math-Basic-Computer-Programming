@@ -1,0 +1,6 @@
+//Example (or sample) of random numbers
+int n; //Declares the first number (Whole)
+double l; //Declares the seconds number (With decimals)
+n = randint(1,100); //Generates a random whole number between 1 and 100
+l = randdouble(0,1000); //Generates a random number between 1 and 1000, with decimals
+printf("%d, %lf\n\n",n, l); Prints the whole number, then the Number with a decimal
