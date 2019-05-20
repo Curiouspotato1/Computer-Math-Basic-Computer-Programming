@@ -1,0 +1,80 @@
+#include<linkbot.h> //This part enables all code for the linkbot to run properly
+
+CLinkbotI ball; // point 0,0 (Declares the linkbot
+string_t point; //Decalare the variable known as "point"
+
+//Code starts here!
+void intro(){
+    //Asks the user where the hacky sack is located
+    printf("Where is the Hacky sack located?\n");
+    //Askes user for the input (Hacky sack location
+    scanf("%s", &point);
+    ball.setSpeed(2.25, 1.75);
+}
+
+/*Next Step
+ *It is in this step that the program will find out where the bot must go to reach the hacky sack
+ *For example:
+ *If you put that the hacky sack is located at one, the bot will travel to the point one.
+ *There is one input for each of the six locations that the hacky sack is located
+ *The code ball.driveDistance(x, y) is used to tell the bot what angle to move at(x) and for how long(y) */
+void marks(){
+    if(point == "one" || point == "One"){
+        ball.driveDistance(21.5, 1.75);
+        ball.turnLeft(90, 1.75, 3.69);
+        ball.driveDistance(40, 1.75);
+        ball.turnRight(90, 1.75, 3.69);
+        ball.driveDistance(12.5, 1.75);
+        ball.turnRight(90, 1.75, 3.69);
+        ball.driveDistance(14, 1.75);
+        ball.driveDistance(-3, 1.75);
+    }
+    if(point == "two" || point == "Two"){
+        ball.driveDistance(21.5, 1.75);
+        ball.turnLeft(90, 1.75, 3.69);
+        ball.driveDistance(40, 1.75);
+        ball.turnRight(90, 1.75, 3.69);
+        ball.driveDistance(25, 1.75);
+        ball.turnRight(90, 1.75, 3.69);
+        ball.driveDistance(9.75, 1.75);
+        ball.turnRight(60, 1.75, 3.69);
+        ball.driveDistance(12, 1.75);
+        ball.driveDistance(-3, 1.75);
+    }
+    if(point == "three" || point == "Three"){
+        ball.driveDistance(47.5, 1.75);
+        ball.turnLeft(90, 1.75, 3.69);
+        ball.driveDistance(15.6, 1.75);
+        ball.turnLeft(60, 1.75, 3.69);
+        ball.driveDistance(14, 1.75);
+        ball.driveDistance(-3, 1.75);
+    }
+    if(point == "four" || point == "Four"){
+        ball.driveDistance(34, 1.75);
+        ball.turnLeft(90, 1.75, 3.69);
+        ball.driveDistance(21.25, 1.75);
+        ball.driveDistance(-3, 1.75);
+    }
+    if(point == "five" || point == "Five"){
+        ball.driveDistance(21.5, 1.75);
+        ball.turnLeft(90, 1.75, 3.69);
+        ball.driveDistance(16.3, 1.75);
+        ball.turnRight(60, 1.75, 3.69);
+        ball.driveDistance(12.6, 1.75);
+        ball.driveDistance(-3, 1.75);
+    }
+    if(point == "six" || point == "Six"){
+        ball.driveDistance(21.5, 1.75);
+        ball.turnLeft(90, 1.75, 3.69);
+        ball.driveDistance(31, 1.75);
+        ball.turnRight(120, 1.75, 3.69);
+        ball.driveDistance(12, 1.75);
+        ball.driveDistance(-3, 1.75);
+    }
+}
+/*This bit of code is the order in which functions will occur.
+ *Intro will occur first, followed by marks */
+int main(){
+    intro();
+    marks();
+}
